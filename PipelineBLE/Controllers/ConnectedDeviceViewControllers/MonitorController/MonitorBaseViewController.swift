@@ -49,7 +49,6 @@ class MonitorBaseViewController: UIViewController {
     
     weak var blePeripheral: BlePeripheral?
     internal var uartData: UartPacketManagerBase!
-    fileprivate var dataManager: UartDataManager!
     fileprivate let timestampDateFormatter = DateFormatter()
     fileprivate var tableCachedDataBuffer: [UartPacket]?
     fileprivate var textCachedBuffer = NSMutableAttributedString()
@@ -58,9 +57,6 @@ class MonitorBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //  Initialize Uart data manager
-        dataManager = UartDataManager(delegate: self, isRxCacheEnabled: true)
-        
         
         //  Make self delegate to keyboard and textview
         keyboardPositionNotifier.delegate = self
@@ -151,9 +147,9 @@ class MonitorBaseViewController: UIViewController {
         return .black
     }
     
- /*   internal func send(message: String){
+    internal func send(message: String){
         assert(false, "Should be implemented by subclasses")
-    }*/
+    }
     
     fileprivate func fontForPacket(packet: UartPacket) -> UIFont {
         let font = packet.mode == .tx ? MonitorViewController.dataTxFont : MonitorViewController.dataRxFont
@@ -356,11 +352,11 @@ extension MonitorBaseViewController {
             //  Alert the devices that are connected
             for peripheral in BleManager.shared.connectedPeripherals(){
                 // Will send frequency, samples, then run count
-                self.send(message: "s"+String(frequency)+"\n", peripheral: peripheral)
+                self.send(message: "s"+String(frequency)+"\n")
                 usleep(500000)
-                self.send(message: "t"+String(samples)+"\n", peripheral: peripheral)
+                self.send(message: "t"+String(samples)+"\n")
                 usleep(500000)
-                self.send(message: "r"+String(runs)+"\n", peripheral: peripheral)
+                self.send(message: "r"+String(runs)+"\n")
                 
                 //  Now let's change the button that is present on the top right
                 self.barButtons(running: true)
@@ -410,7 +406,7 @@ extension MonitorBaseViewController: UITextFieldDelegate{
     }
 }
 
-extension MonitorBaseViewController: UartDataManagerDelegate{
+extension MonitorBaseViewController: UartPacketManagerDelegate{
     func onUartPacket(_ packet: UartPacket) {
         // Check that the view has been initialized before updating UI
         guard isViewLoaded && view.window != nil else { return }
@@ -449,34 +445,6 @@ extension MonitorBaseViewController: UartDataManagerDelegate{
             textCachedBuffer.append(attributedString)
         }
     }
-    
-    func send(message: String) {
-        guard let dataManager = self.dataManager else { DLog("Error send with invalid uartData class"); return }
-        
-        print("Sending message: \(message)")
-        
-        //  Single peripheral mode
-        if let blePeripheral = blePeripheral {
-            if let data = message.data(using: .utf8) {
-                dataManager.send(blePeripheral: blePeripheral, data: data)
-            }
-        }
-    }
-    
-    func send(message: String, peripheral: BlePeripheral!) {
-        guard let dataManager = self.dataManager else { DLog("Error send with invalid uartData class"); return }
-        
-        print("Sending message: \(message)")
-        
-        //  Send data to specified peripheral
-        if let data = message.data(using: .utf8) {
-            dataManager.send(blePeripheral: peripheral, data: data)
-        }
-    }
 
-    //  What to do when data is received
-    func onUartRx(data: Data, peripheralIdentifier: UUID) {
- 
-    }
     
 }

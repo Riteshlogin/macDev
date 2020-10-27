@@ -17,7 +17,8 @@ class MonitorViewController: MonitorBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //  Init UartuartData = UartPacketManager(delegate: self, isPacketCacheEnabled: true, isMqttEnabled: true)
+        //  Init Uart
+        uartData = UartPacketManager(delegate: self, isPacketCacheEnabled: true, isMqttEnabled: true)
         
         //  Need to add actions for the buttons
         sendButton.addTarget(self, action: #selector(onClickSend(_:)), for: .touchDown)
