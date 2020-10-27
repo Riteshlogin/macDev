@@ -1,0 +1,1001 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DEF37D8C53C6E82192CB0E5 /* Pods_PipelineBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CB36934AAD2748645405D5 /* Pods_PipelineBLE.framework */; };
+		B9014712234794D10001E90C /* PipelineBLE.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9014710234794D10001E90C /* PipelineBLE.xcdatamodeld */; };
+		B9014714234795BF0001E90C /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9014713234795BF0001E90C /* PersistenceService.swift */; };
+		B901471B2347DE5E0001E90C /* SavedData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90147192347DE5D0001E90C /* SavedData+CoreDataProperties.swift */; };
+		B901471C2347DE5E0001E90C /* SavedData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B901471A2347DE5D0001E90C /* SavedData+CoreDataClass.swift */; };
+		B901471F2347DEC80001E90C /* PlotData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B901471D2347DEC80001E90C /* PlotData+CoreDataClass.swift */; };
+		B90147202347DEC80001E90C /* PlotData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B901471E2347DEC80001E90C /* PlotData+CoreDataProperties.swift */; };
+		B90147222347DF240001E90C /* UARTData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90147212347DF240001E90C /* UARTData+CoreDataClass.swift */; };
+		B90147242347DF270001E90C /* UARTData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90147232347DF270001E90C /* UARTData+CoreDataProperties.swift */; };
+		B924C5432385F2960013B0AB /* PeripheralInfoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B924C5422385F2960013B0AB /* PeripheralInfoSelectorViewController.swift */; };
+		B94CD1EA23071C050077F77E /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94CD1E923071C040077F77E /* Preferences.swift */; };
+		B94CD1F0230735C80077F77E /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94CD1EE230735C80077F77E /* WatchSessionManager.swift */; };
+		B94CD1F1230735C80077F77E /* HandoffManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94CD1EF230735C80077F77E /* HandoffManager.swift */; };
+		B9677DA02367B2860015E6EA /* ExportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9677D9F2367B2860015E6EA /* ExportData.swift */; };
+		B9677DA4236914E20015E6EA /* PlotPagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9677DA3236914E20015E6EA /* PlotPagesView.swift */; };
+		B9677DAA236CBCD60015E6EA /* DataStreamContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9677DA9236CBCD60015E6EA /* DataStreamContainerViewController.swift */; };
+		B97BC49322FB3EEE00858CA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC49222FB3EEE00858CA9 /* AppDelegate.swift */; };
+		B97BC49522FB3EEE00858CA9 /* SavedDevicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC49422FB3EEE00858CA9 /* SavedDevicesViewController.swift */; };
+		B97BC49A22FB3EFF00858CA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B97BC49922FB3EFF00858CA9 /* Assets.xcassets */; };
+		B97BC49D22FB3EFF00858CA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97BC49B22FB3EFF00858CA9 /* LaunchScreen.storyboard */; };
+		B97BC4AB22FB47C200858CA9 /* AvailableDevicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4AA22FB47C200858CA9 /* AvailableDevicesTableViewCell.swift */; };
+		B97BC4AE22FB4C7100858CA9 /* UARTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4AD22FB4C7100858CA9 /* UARTViewController.swift */; };
+		B97BC4BD22FB5EE400858CA9 /* UartDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4B522FB5EE200858CA9 /* UartDataManager.swift */; };
+		B97BC4BE22FB5EE400858CA9 /* BleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4B622FB5EE200858CA9 /* BleManager.swift */; };
+		B97BC4BF22FB5EE400858CA9 /* BlePeripheral+Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4B722FB5EE300858CA9 /* BlePeripheral+Battery.swift */; };
+		B97BC4C022FB5EE400858CA9 /* BlePeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4B822FB5EE300858CA9 /* BlePeripheral.swift */; };
+		B97BC4C122FB5EE400858CA9 /* UartLogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4B922FB5EE300858CA9 /* UartLogManager.swift */; };
+		B97BC4C222FB5EE400858CA9 /* BlePeripheral+Uart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4BA22FB5EE300858CA9 /* BlePeripheral+Uart.swift */; };
+		B97BC4C322FB5EE400858CA9 /* UartPacketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4BB22FB5EE300858CA9 /* UartPacketManager.swift */; };
+		B97BC4C422FB5EE400858CA9 /* BleUUIDNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4BC22FB5EE400858CA9 /* BleUUIDNames.swift */; };
+		B97BC4CB22FB5EFF00858CA9 /* UartPeripheralService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4C622FB5EFE00858CA9 /* UartPeripheralService.swift */; };
+		B97BC4CC22FB5EFF00858CA9 /* PeripheralService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4C722FB5EFE00858CA9 /* PeripheralService.swift */; };
+		B97BC4CD22FB5EFF00858CA9 /* GattServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4C822FB5EFF00858CA9 /* GattServer.swift */; };
+		B97BC4CE22FB5EFF00858CA9 /* UartPeripheralModePacketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4C922FB5EFF00858CA9 /* UartPeripheralModePacketManager.swift */; };
+		B97BC4CF22FB5EFF00858CA9 /* DeviceInformationPeripheralService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4CA22FB5EFF00858CA9 /* DeviceInformationPeripheralService.swift */; };
+		B97BC4D122FB5F0900858CA9 /* UartPacketManagerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4D022FB5F0900858CA9 /* UartPacketManagerBase.swift */; };
+		B97BC4D922FB67AB00858CA9 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4D822FB67AB00858CA9 /* LocalizationManager.swift */; };
+		B97BC4DB22FB683400858CA9 /* LogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4DA22FB683400858CA9 /* LogHelper.swift */; };
+		B97BC4DD22FB686B00858CA9 /* CommandQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4DC22FB686B00858CA9 /* CommandQueue.swift */; };
+		B97BC4DF22FB6AC200858CA9 /* DataConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4DE22FB6AC200858CA9 /* DataConversions.swift */; };
+		B97BC4E222FB6AE400858CA9 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4E122FB6AE400858CA9 /* AlertHelper.swift */; };
+		B97BC4E422FB6AEC00858CA9 /* Data+ScanValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4E322FB6AEC00858CA9 /* Data+ScanValue.swift */; };
+		B97BC4E622FB6AF600858CA9 /* DataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4E522FB6AF600858CA9 /* DataDownloader.swift */; };
+		B97BC4E822FB6AFE00858CA9 /* KeyboardPositionNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4E722FB6AFE00858CA9 /* KeyboardPositionNotifier.swift */; };
+		B97BC4EC22FB6B5D00858CA9 /* MqttManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4EA22FB6B5D00858CA9 /* MqttManager.swift */; };
+		B97BC4ED22FB6B5D00858CA9 /* MqttSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4EB22FB6B5D00858CA9 /* MqttSettings.swift */; };
+		B97BC4EF22FC8FEF00858CA9 /* MainPageTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4EE22FC8FEF00858CA9 /* MainPageTabBarController.swift */; };
+		B97BC4F122FC90DE00858CA9 /* AvailableDevicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4F022FC90DE00858CA9 /* AvailableDevicesViewController.swift */; };
+		B97BC4F322FCA27900858CA9 /* PastDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97BC4F222FCA27900858CA9 /* PastDataViewController.swift */; };
+		B99E3C2B2314279700C03948 /* ConnectedDeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E3C2A2314279700C03948 /* ConnectedDeviceTableViewCell.swift */; };
+		B99E3C2D2314B7AA00C03948 /* AvailableModulesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E3C2C2314B7AA00C03948 /* AvailableModulesTableViewCell.swift */; };
+		B99E3C302314BB5300C03948 /* DeviceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E3C2F2314BB5300C03948 /* DeviceInfoViewController.swift */; };
+		B99E3C322316C60B00C03948 /* UARTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E3C312316C60B00C03948 /* UARTBaseViewController.swift */; };
+		B99E3C342319C2D000C03948 /* DataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E3C332319C2D000C03948 /* DataFormatter.swift */; };
+		B99E3C41231FFEFA00C03948 /* NSObject+ENHThrottledReloading.m in Sources */ = {isa = PBXBuildFile; fileRef = B99E3C40231FFEFA00C03948 /* NSObject+ENHThrottledReloading.m */; };
+		B99E3C442320007700C03948 /* CocoaCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E3C432320007700C03948 /* CocoaCompatibility.swift */; };
+		B99E3C46232000A100C03948 /* Color+DarkerLighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E3C45232000A100C03948 /* Color+DarkerLighter.swift */; };
+		B99E3C4D23201DCB00C03948 /* UartStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E3C4A23201DCB00C03948 /* UartStyle.swift */; };
+		B99E3C4E23201DCB00C03948 /* UartDataExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E3C4B23201DCB00C03948 /* UartDataExport.swift */; };
+		B99E3C4F23201DCB00C03948 /* UartSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E3C4C23201DCB00C03948 /* UartSettings.swift */; };
+		B99E3C56232AA51D00C03948 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E3C55232AA51D00C03948 /* CustomButton.swift */; };
+		B99E3C58232AA53A00C03948 /* UARTButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E3C57232AA53A00C03948 /* UARTButtons.swift */; };
+		B99E3C7E232AF7CB00C03948 /* UARTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E3C7D232AF7CB00C03948 /* UARTTextField.swift */; };
+		B9BB539823575A17006DBDF9 /* DisplayDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB539723575A17006DBDF9 /* DisplayDataViewController.swift */; };
+		B9BB539B2358B0EE006DBDF9 /* SavedPeripheral+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB53992358B0ED006DBDF9 /* SavedPeripheral+CoreDataClass.swift */; };
+		B9BB539C2358B0EE006DBDF9 /* SavedPeripheral+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB539A2358B0EE006DBDF9 /* SavedPeripheral+CoreDataProperties.swift */; };
+		B9BEF6E923399B6100906B4C /* PersistentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BEF6E823399B6100906B4C /* PersistentData.swift */; };
+		B9CA5044230C3725007E31D8 /* MSWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CA5043230C3725007E31D8 /* MSWeakTimer.m */; };
+		B9CA5049230C7435007E31D8 /* ReleasesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CA5046230C7435007E31D8 /* ReleasesParser.swift */; };
+		B9CA504A230C7435007E31D8 /* DfuUpdateProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CA5047230C7435007E31D8 /* DfuUpdateProcess.swift */; };
+		B9CA504B230C7436007E31D8 /* FirmwareUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CA5048230C7435007E31D8 /* FirmwareUpdater.swift */; };
+		B9CA5051230C7E10007E31D8 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9CA5050230C7E10007E31D8 /* DefaultPreferences.plist */; };
+		B9CA505E230C953B007E31D8 /* RssiUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CA505C230C953B007E31D8 /* RssiUI.swift */; };
+		B9CA505F230C953B007E31D8 /* PeripheralList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CA505D230C953B007E31D8 /* PeripheralList.swift */; };
+		B9CA5064230DC5D9007E31D8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9CA5062230DC5D9007E31D8 /* Localizable.strings */; };
+		B9CA506D230F3D83007E31D8 /* SavedDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CA506C230F3D83007E31D8 /* SavedDataViewController.swift */; };
+		B9CA506F230F3E20007E31D8 /* ButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CA506E230F3E20007E31D8 /* ButtonsViewController.swift */; };
+		B9CA5071230F4C71007E31D8 /* ConnectedDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CA5070230F4C71007E31D8 /* ConnectedDeviceViewController.swift */; };
+		B9FDD922254795410034E81B /* MonitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FDD921254795410034E81B /* MonitorViewController.swift */; };
+		B9FDD924254796870034E81B /* MonitorBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FDD923254796870034E81B /* MonitorBaseViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		11510BAA3628386FECC3B2F8 /* Pods-PipelineBLE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PipelineBLE.debug.xcconfig"; path = "Target Support Files/Pods-PipelineBLE/Pods-PipelineBLE.debug.xcconfig"; sourceTree = "<group>"; };
+		65CB36934AAD2748645405D5 /* Pods_PipelineBLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PipelineBLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9014711234794D10001E90C /* PipelineBLE.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PipelineBLE.xcdatamodel; sourceTree = "<group>"; };
+		B9014713234795BF0001E90C /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		B90147192347DE5D0001E90C /* SavedData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SavedData+CoreDataProperties.swift"; path = "/Users/samuelpeterson/Desktop/PipelineBLE/PipelineBLE/PipelineBLE/Common/PersistentData/SavedData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		B901471A2347DE5D0001E90C /* SavedData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SavedData+CoreDataClass.swift"; path = "/Users/samuelpeterson/Desktop/PipelineBLE/PipelineBLE/PipelineBLE/Common/PersistentData/SavedData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		B901471D2347DEC80001E90C /* PlotData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlotData+CoreDataClass.swift"; path = "/Users/samuelpeterson/Desktop/PipelineBLE/PipelineBLE/PipelineBLE/Common/PersistentData/PlotData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		B901471E2347DEC80001E90C /* PlotData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlotData+CoreDataProperties.swift"; path = "/Users/samuelpeterson/Desktop/PipelineBLE/PipelineBLE/PipelineBLE/Common/PersistentData/PlotData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		B90147212347DF240001E90C /* UARTData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UARTData+CoreDataClass.swift"; path = "/Users/samuelpeterson/Desktop/PipelineBLE/PipelineBLE/PipelineBLE/Common/PersistentData/UARTData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		B90147232347DF270001E90C /* UARTData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UARTData+CoreDataProperties.swift"; path = "/Users/samuelpeterson/Desktop/PipelineBLE/PipelineBLE/PipelineBLE/Common/PersistentData/UARTData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		B924C5422385F2960013B0AB /* PeripheralInfoSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralInfoSelectorViewController.swift; sourceTree = "<group>"; };
+		B94CD1E923071C040077F77E /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		B94CD1EE230735C80077F77E /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
+		B94CD1EF230735C80077F77E /* HandoffManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandoffManager.swift; sourceTree = "<group>"; };
+		B9677D9F2367B2860015E6EA /* ExportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportData.swift; sourceTree = "<group>"; };
+		B9677DA3236914E20015E6EA /* PlotPagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotPagesView.swift; sourceTree = "<group>"; };
+		B9677DA9236CBCD60015E6EA /* DataStreamContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStreamContainerViewController.swift; sourceTree = "<group>"; };
+		B97BC48F22FB3EEE00858CA9 /* PipelineBLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PipelineBLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B97BC49222FB3EEE00858CA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B97BC49422FB3EEE00858CA9 /* SavedDevicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDevicesViewController.swift; sourceTree = "<group>"; };
+		B97BC49922FB3EFF00858CA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B97BC49C22FB3EFF00858CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B97BC49E22FB3EFF00858CA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B97BC4AA22FB47C200858CA9 /* AvailableDevicesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableDevicesTableViewCell.swift; sourceTree = "<group>"; };
+		B97BC4AD22FB4C7100858CA9 /* UARTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UARTViewController.swift; sourceTree = "<group>"; };
+		B97BC4B522FB5EE200858CA9 /* UartDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UartDataManager.swift; sourceTree = "<group>"; };
+		B97BC4B622FB5EE200858CA9 /* BleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleManager.swift; sourceTree = "<group>"; };
+		B97BC4B722FB5EE300858CA9 /* BlePeripheral+Battery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BlePeripheral+Battery.swift"; sourceTree = "<group>"; };
+		B97BC4B822FB5EE300858CA9 /* BlePeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlePeripheral.swift; sourceTree = "<group>"; };
+		B97BC4B922FB5EE300858CA9 /* UartLogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UartLogManager.swift; sourceTree = "<group>"; };
+		B97BC4BA22FB5EE300858CA9 /* BlePeripheral+Uart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BlePeripheral+Uart.swift"; sourceTree = "<group>"; };
+		B97BC4BB22FB5EE300858CA9 /* UartPacketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UartPacketManager.swift; sourceTree = "<group>"; };
+		B97BC4BC22FB5EE400858CA9 /* BleUUIDNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleUUIDNames.swift; sourceTree = "<group>"; };
+		B97BC4C622FB5EFE00858CA9 /* UartPeripheralService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UartPeripheralService.swift; sourceTree = "<group>"; };
+		B97BC4C722FB5EFE00858CA9 /* PeripheralService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralService.swift; sourceTree = "<group>"; };
+		B97BC4C822FB5EFF00858CA9 /* GattServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GattServer.swift; sourceTree = "<group>"; };
+		B97BC4C922FB5EFF00858CA9 /* UartPeripheralModePacketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UartPeripheralModePacketManager.swift; sourceTree = "<group>"; };
+		B97BC4CA22FB5EFF00858CA9 /* DeviceInformationPeripheralService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInformationPeripheralService.swift; sourceTree = "<group>"; };
+		B97BC4D022FB5F0900858CA9 /* UartPacketManagerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UartPacketManagerBase.swift; sourceTree = "<group>"; };
+		B97BC4D822FB67AB00858CA9 /* LocalizationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		B97BC4DA22FB683400858CA9 /* LogHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogHelper.swift; sourceTree = "<group>"; };
+		B97BC4DC22FB686B00858CA9 /* CommandQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandQueue.swift; sourceTree = "<group>"; };
+		B97BC4DE22FB6AC200858CA9 /* DataConversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConversions.swift; sourceTree = "<group>"; };
+		B97BC4E122FB6AE400858CA9 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		B97BC4E322FB6AEC00858CA9 /* Data+ScanValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+ScanValue.swift"; sourceTree = "<group>"; };
+		B97BC4E522FB6AF600858CA9 /* DataDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDownloader.swift; sourceTree = "<group>"; };
+		B97BC4E722FB6AFE00858CA9 /* KeyboardPositionNotifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardPositionNotifier.swift; sourceTree = "<group>"; };
+		B97BC4EA22FB6B5D00858CA9 /* MqttManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MqttManager.swift; sourceTree = "<group>"; };
+		B97BC4EB22FB6B5D00858CA9 /* MqttSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MqttSettings.swift; sourceTree = "<group>"; };
+		B97BC4EE22FC8FEF00858CA9 /* MainPageTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTabBarController.swift; sourceTree = "<group>"; };
+		B97BC4F022FC90DE00858CA9 /* AvailableDevicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDevicesViewController.swift; sourceTree = "<group>"; };
+		B97BC4F222FCA27900858CA9 /* PastDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastDataViewController.swift; sourceTree = "<group>"; };
+		B99E3C2A2314279700C03948 /* ConnectedDeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedDeviceTableViewCell.swift; sourceTree = "<group>"; };
+		B99E3C2C2314B7AA00C03948 /* AvailableModulesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableModulesTableViewCell.swift; sourceTree = "<group>"; };
+		B99E3C2F2314BB5300C03948 /* DeviceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoViewController.swift; sourceTree = "<group>"; };
+		B99E3C312316C60B00C03948 /* UARTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UARTBaseViewController.swift; sourceTree = "<group>"; };
+		B99E3C332319C2D000C03948 /* DataFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormatter.swift; sourceTree = "<group>"; };
+		B99E3C3F231FFEF400C03948 /* NSObject+ENHThrottledReloading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ENHThrottledReloading.h"; sourceTree = "<group>"; };
+		B99E3C40231FFEFA00C03948 /* NSObject+ENHThrottledReloading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ENHThrottledReloading.m"; sourceTree = "<group>"; };
+		B99E3C432320007700C03948 /* CocoaCompatibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaCompatibility.swift; sourceTree = "<group>"; };
+		B99E3C45232000A100C03948 /* Color+DarkerLighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+DarkerLighter.swift"; sourceTree = "<group>"; };
+		B99E3C472320029300C03948 /* PipelineBLE-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PipelineBLE-Bridging-Header.h"; sourceTree = "<group>"; };
+		B99E3C4A23201DCB00C03948 /* UartStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UartStyle.swift; sourceTree = "<group>"; };
+		B99E3C4B23201DCB00C03948 /* UartDataExport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UartDataExport.swift; sourceTree = "<group>"; };
+		B99E3C4C23201DCB00C03948 /* UartSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UartSettings.swift; sourceTree = "<group>"; };
+		B99E3C55232AA51D00C03948 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		B99E3C57232AA53A00C03948 /* UARTButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UARTButtons.swift; sourceTree = "<group>"; };
+		B99E3C7D232AF7CB00C03948 /* UARTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UARTTextField.swift; sourceTree = "<group>"; };
+		B9BB539723575A17006DBDF9 /* DisplayDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataViewController.swift; sourceTree = "<group>"; };
+		B9BB53992358B0ED006DBDF9 /* SavedPeripheral+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SavedPeripheral+CoreDataClass.swift"; path = "/Users/samuelpeterson/Desktop/PipelineBLE/PipelineBLE/PipelineBLE/Common/PersistentData/SavedPeripheral+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		B9BB539A2358B0EE006DBDF9 /* SavedPeripheral+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SavedPeripheral+CoreDataProperties.swift"; path = "/Users/samuelpeterson/Desktop/PipelineBLE/PipelineBLE/PipelineBLE/Common/PersistentData/SavedPeripheral+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		B9BEF6E823399B6100906B4C /* PersistentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentData.swift; sourceTree = "<group>"; };
+		B9CA5041230C3725007E31D8 /* MSWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWeakTimer.h; sourceTree = "<group>"; };
+		B9CA5043230C3725007E31D8 /* MSWeakTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWeakTimer.m; sourceTree = "<group>"; };
+		B9CA5046230C7435007E31D8 /* ReleasesParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleasesParser.swift; sourceTree = "<group>"; };
+		B9CA5047230C7435007E31D8 /* DfuUpdateProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DfuUpdateProcess.swift; sourceTree = "<group>"; };
+		B9CA5048230C7435007E31D8 /* FirmwareUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirmwareUpdater.swift; sourceTree = "<group>"; };
+		B9CA5050230C7E10007E31D8 /* DefaultPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
+		B9CA505C230C953B007E31D8 /* RssiUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssiUI.swift; sourceTree = "<group>"; };
+		B9CA505D230C953B007E31D8 /* PeripheralList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralList.swift; sourceTree = "<group>"; };
+		B9CA5063230DC5D9007E31D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		B9CA506C230F3D83007E31D8 /* SavedDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDataViewController.swift; sourceTree = "<group>"; };
+		B9CA506E230F3E20007E31D8 /* ButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsViewController.swift; sourceTree = "<group>"; };
+		B9CA5070230F4C71007E31D8 /* ConnectedDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedDeviceViewController.swift; sourceTree = "<group>"; };
+		B9FDD921254795410034E81B /* MonitorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorViewController.swift; sourceTree = "<group>"; };
+		B9FDD923254796870034E81B /* MonitorBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorBaseViewController.swift; sourceTree = "<group>"; };
+		C2FF2DC3A457339C6DFFB7F3 /* Pods-PipelineBLE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PipelineBLE.release.xcconfig"; path = "Target Support Files/Pods-PipelineBLE/Pods-PipelineBLE.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B97BC48C22FB3EEE00858CA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DEF37D8C53C6E82192CB0E5 /* Pods_PipelineBLE.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4AC6268059E52908A9BDD1A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11510BAA3628386FECC3B2F8 /* Pods-PipelineBLE.debug.xcconfig */,
+				C2FF2DC3A457339C6DFFB7F3 /* Pods-PipelineBLE.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		71C228D8CA8321CCAF6758D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65CB36934AAD2748645405D5 /* Pods_PipelineBLE.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B94CD1ED230735B30077F77E /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				B94CD1EF230735C80077F77E /* HandoffManager.swift */,
+				B94CD1EE230735C80077F77E /* WatchSessionManager.swift */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		B97BC48622FB3EEE00858CA9 = {
+			isa = PBXGroup;
+			children = (
+				B97BC49122FB3EEE00858CA9 /* PipelineBLE */,
+				B97BC49022FB3EEE00858CA9 /* Products */,
+				4AC6268059E52908A9BDD1A2 /* Pods */,
+				71C228D8CA8321CCAF6758D9 /* Frameworks */,
+				B9CA504C230C7DEA007E31D8 /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		B97BC49022FB3EEE00858CA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B97BC48F22FB3EEE00858CA9 /* PipelineBLE.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B97BC49122FB3EEE00858CA9 /* PipelineBLE */ = {
+			isa = PBXGroup;
+			children = (
+				B97BC4AF22FB5DE600858CA9 /* Common */,
+				B97BC4A422FB407000858CA9 /* Controllers */,
+				B97BC49222FB3EEE00858CA9 /* AppDelegate.swift */,
+				B97BC49922FB3EFF00858CA9 /* Assets.xcassets */,
+				B97BC49B22FB3EFF00858CA9 /* LaunchScreen.storyboard */,
+				B97BC49E22FB3EFF00858CA9 /* Info.plist */,
+			);
+			path = PipelineBLE;
+			sourceTree = "<group>";
+		};
+		B97BC4A422FB407000858CA9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B97BC4A622FB408E00858CA9 /* ConnectedDeviceViewControllers */,
+				B97BC4A522FB408200858CA9 /* MainPageViewControllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B97BC4A522FB408200858CA9 /* MainPageViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B97BC4EE22FC8FEF00858CA9 /* MainPageTabBarController.swift */,
+				B97BC4A922FB40B200858CA9 /* PastDataControllers */,
+				B97BC4A822FB40A600858CA9 /* AvailableDevicesControllers */,
+				B97BC4A722FB409A00858CA9 /* SavedDevicesControllers */,
+			);
+			path = MainPageViewControllers;
+			sourceTree = "<group>";
+		};
+		B97BC4A622FB408E00858CA9 /* ConnectedDeviceViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B9CA5070230F4C71007E31D8 /* ConnectedDeviceViewController.swift */,
+				B99E3C2A2314279700C03948 /* ConnectedDeviceTableViewCell.swift */,
+				B99E3C2C2314B7AA00C03948 /* AvailableModulesTableViewCell.swift */,
+				B9FDD9202547951D0034E81B /* MonitorController */,
+				B99E3C2E2314BB2A00C03948 /* DeviceInfoController */,
+				B9CA5069230F3D1D007E31D8 /* ButtonsControllers */,
+				B9CA5068230F3D09007E31D8 /* SavedDataControllers */,
+				B9CA5067230F3CEA007E31D8 /* DataStreamControllers */,
+				B97BC4AC22FB4C5500858CA9 /* UARTControllers */,
+			);
+			path = ConnectedDeviceViewControllers;
+			sourceTree = "<group>";
+		};
+		B97BC4A722FB409A00858CA9 /* SavedDevicesControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B97BC49422FB3EEE00858CA9 /* SavedDevicesViewController.swift */,
+			);
+			path = SavedDevicesControllers;
+			sourceTree = "<group>";
+		};
+		B97BC4A822FB40A600858CA9 /* AvailableDevicesControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B97BC4F022FC90DE00858CA9 /* AvailableDevicesViewController.swift */,
+				B97BC4AA22FB47C200858CA9 /* AvailableDevicesTableViewCell.swift */,
+			);
+			path = AvailableDevicesControllers;
+			sourceTree = "<group>";
+		};
+		B97BC4A922FB40B200858CA9 /* PastDataControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B97BC4F222FCA27900858CA9 /* PastDataViewController.swift */,
+			);
+			path = PastDataControllers;
+			sourceTree = "<group>";
+		};
+		B97BC4AC22FB4C5500858CA9 /* UARTControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B99E3C312316C60B00C03948 /* UARTBaseViewController.swift */,
+				B97BC4AD22FB4C7100858CA9 /* UARTViewController.swift */,
+			);
+			path = UARTControllers;
+			sourceTree = "<group>";
+		};
+		B97BC4AF22FB5DE600858CA9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B9677D9F2367B2860015E6EA /* ExportData.swift */,
+				B99E3C332319C2D000C03948 /* DataFormatter.swift */,
+				B99E3C432320007700C03948 /* CocoaCompatibility.swift */,
+				B99E3C45232000A100C03948 /* Color+DarkerLighter.swift */,
+				B94CD1E923071C040077F77E /* Preferences.swift */,
+				B9BEF6E7233999DB00906B4C /* PersistentData */,
+				B99E3C51232AA49900C03948 /* Style */,
+				B99E3C4823201DAD00C03948 /* Modules */,
+				B94CD1ED230735B30077F77E /* Watch */,
+				B9D97D1E2300AED400882E66 /* PeripheralModules */,
+				B9CA5045230C741E007E31D8 /* Dfu */,
+				B97BC4B022FB5E4800858CA9 /* AdafruitKit */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B97BC4B022FB5E4800858CA9 /* AdafruitKit */ = {
+			isa = PBXGroup;
+			children = (
+				B9CA503F230C36FE007E31D8 /* EmbeddedFrameworks */,
+				B97BC4E922FB6B5000858CA9 /* Mqtt */,
+				B97BC4E022FB6AC600858CA9 /* Utils */,
+				B97BC4B122FB5E5D00858CA9 /* Ble */,
+			);
+			path = AdafruitKit;
+			sourceTree = "<group>";
+		};
+		B97BC4B122FB5E5D00858CA9 /* Ble */ = {
+			isa = PBXGroup;
+			children = (
+				B97BC4D022FB5F0900858CA9 /* UartPacketManagerBase.swift */,
+				B97BC4C522FB5EEA00858CA9 /* BlePeripheralMode */,
+				B97BC4B422FB5EC900858CA9 /* BleCentralMode */,
+			);
+			path = Ble;
+			sourceTree = "<group>";
+		};
+		B97BC4B422FB5EC900858CA9 /* BleCentralMode */ = {
+			isa = PBXGroup;
+			children = (
+				B97BC4B622FB5EE200858CA9 /* BleManager.swift */,
+				B97BC4B822FB5EE300858CA9 /* BlePeripheral.swift */,
+				B97BC4B722FB5EE300858CA9 /* BlePeripheral+Battery.swift */,
+				B97BC4BA22FB5EE300858CA9 /* BlePeripheral+Uart.swift */,
+				B97BC4BC22FB5EE400858CA9 /* BleUUIDNames.swift */,
+				B97BC4B522FB5EE200858CA9 /* UartDataManager.swift */,
+				B97BC4B922FB5EE300858CA9 /* UartLogManager.swift */,
+				B97BC4BB22FB5EE300858CA9 /* UartPacketManager.swift */,
+			);
+			path = BleCentralMode;
+			sourceTree = "<group>";
+		};
+		B97BC4C522FB5EEA00858CA9 /* BlePeripheralMode */ = {
+			isa = PBXGroup;
+			children = (
+				B97BC4CA22FB5EFF00858CA9 /* DeviceInformationPeripheralService.swift */,
+				B97BC4C822FB5EFF00858CA9 /* GattServer.swift */,
+				B97BC4C722FB5EFE00858CA9 /* PeripheralService.swift */,
+				B97BC4C922FB5EFF00858CA9 /* UartPeripheralModePacketManager.swift */,
+				B97BC4C622FB5EFE00858CA9 /* UartPeripheralService.swift */,
+			);
+			path = BlePeripheralMode;
+			sourceTree = "<group>";
+		};
+		B97BC4E022FB6AC600858CA9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B97BC4E322FB6AEC00858CA9 /* Data+ScanValue.swift */,
+				B97BC4E122FB6AE400858CA9 /* AlertHelper.swift */,
+				B97BC4DE22FB6AC200858CA9 /* DataConversions.swift */,
+				B97BC4E522FB6AF600858CA9 /* DataDownloader.swift */,
+				B97BC4DC22FB686B00858CA9 /* CommandQueue.swift */,
+				B97BC4E722FB6AFE00858CA9 /* KeyboardPositionNotifier.swift */,
+				B97BC4DA22FB683400858CA9 /* LogHelper.swift */,
+				B97BC4D822FB67AB00858CA9 /* LocalizationManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B97BC4E922FB6B5000858CA9 /* Mqtt */ = {
+			isa = PBXGroup;
+			children = (
+				B97BC4EA22FB6B5D00858CA9 /* MqttManager.swift */,
+				B97BC4EB22FB6B5D00858CA9 /* MqttSettings.swift */,
+			);
+			path = Mqtt;
+			sourceTree = "<group>";
+		};
+		B99E3C2E2314BB2A00C03948 /* DeviceInfoController */ = {
+			isa = PBXGroup;
+			children = (
+				B924C5422385F2960013B0AB /* PeripheralInfoSelectorViewController.swift */,
+				B99E3C2F2314BB5300C03948 /* DeviceInfoViewController.swift */,
+			);
+			path = DeviceInfoController;
+			sourceTree = "<group>";
+		};
+		B99E3C352319C4DB00C03948 /* External Tools */ = {
+			isa = PBXGroup;
+			children = (
+				B99E3C3E231FFEDA00C03948 /* NSObject+ENHThrottledReloading */,
+			);
+			path = "External Tools";
+			sourceTree = "<group>";
+		};
+		B99E3C3E231FFEDA00C03948 /* NSObject+ENHThrottledReloading */ = {
+			isa = PBXGroup;
+			children = (
+				B99E3C3F231FFEF400C03948 /* NSObject+ENHThrottledReloading.h */,
+				B99E3C40231FFEFA00C03948 /* NSObject+ENHThrottledReloading.m */,
+			);
+			path = "NSObject+ENHThrottledReloading";
+			sourceTree = "<group>";
+		};
+		B99E3C4823201DAD00C03948 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B99E3C4923201DB600C03948 /* UART */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B99E3C4923201DB600C03948 /* UART */ = {
+			isa = PBXGroup;
+			children = (
+				B99E3C4B23201DCB00C03948 /* UartDataExport.swift */,
+				B99E3C4C23201DCB00C03948 /* UartSettings.swift */,
+				B99E3C4A23201DCB00C03948 /* UartStyle.swift */,
+			);
+			path = UART;
+			sourceTree = "<group>";
+		};
+		B99E3C51232AA49900C03948 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				B99E3C55232AA51D00C03948 /* CustomButton.swift */,
+				B99E3C57232AA53A00C03948 /* UARTButtons.swift */,
+				B99E3C7D232AF7CB00C03948 /* UARTTextField.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		B9BEF6E7233999DB00906B4C /* PersistentData */ = {
+			isa = PBXGroup;
+			children = (
+				B9BB53992358B0ED006DBDF9 /* SavedPeripheral+CoreDataClass.swift */,
+				B9BB539A2358B0EE006DBDF9 /* SavedPeripheral+CoreDataProperties.swift */,
+				B901471A2347DE5D0001E90C /* SavedData+CoreDataClass.swift */,
+				B90147192347DE5D0001E90C /* SavedData+CoreDataProperties.swift */,
+				B901471D2347DEC80001E90C /* PlotData+CoreDataClass.swift */,
+				B901471E2347DEC80001E90C /* PlotData+CoreDataProperties.swift */,
+				B90147212347DF240001E90C /* UARTData+CoreDataClass.swift */,
+				B90147232347DF270001E90C /* UARTData+CoreDataProperties.swift */,
+				B9BEF6E823399B6100906B4C /* PersistentData.swift */,
+				B9014713234795BF0001E90C /* PersistenceService.swift */,
+			);
+			path = PersistentData;
+			sourceTree = "<group>";
+		};
+		B9CA503F230C36FE007E31D8 /* EmbeddedFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9CA5040230C370A007E31D8 /* MSWeakTimer */,
+			);
+			path = EmbeddedFrameworks;
+			sourceTree = "<group>";
+		};
+		B9CA5040230C370A007E31D8 /* MSWeakTimer */ = {
+			isa = PBXGroup;
+			children = (
+				B9CA5041230C3725007E31D8 /* MSWeakTimer.h */,
+				B9CA5043230C3725007E31D8 /* MSWeakTimer.m */,
+			);
+			path = MSWeakTimer;
+			sourceTree = "<group>";
+		};
+		B9CA5045230C741E007E31D8 /* Dfu */ = {
+			isa = PBXGroup;
+			children = (
+				B9CA5047230C7435007E31D8 /* DfuUpdateProcess.swift */,
+				B9CA5048230C7435007E31D8 /* FirmwareUpdater.swift */,
+				B9CA5046230C7435007E31D8 /* ReleasesParser.swift */,
+			);
+			path = Dfu;
+			sourceTree = "<group>";
+		};
+		B9CA504C230C7DEA007E31D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B99E3C472320029300C03948 /* PipelineBLE-Bridging-Header.h */,
+				B99E3C352319C4DB00C03948 /* External Tools */,
+				B9CA5060230DC592007E31D8 /* Localization */,
+				B9CA5050230C7E10007E31D8 /* DefaultPreferences.plist */,
+				B9014710234794D10001E90C /* PipelineBLE.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B9CA5060230DC592007E31D8 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				B9CA5061230DC5CA007E31D8 /* en.lproj */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		B9CA5061230DC5CA007E31D8 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				B9CA5062230DC5D9007E31D8 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		B9CA5067230F3CEA007E31D8 /* DataStreamControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B9677DA9236CBCD60015E6EA /* DataStreamContainerViewController.swift */,
+				B9677DA3236914E20015E6EA /* PlotPagesView.swift */,
+			);
+			path = DataStreamControllers;
+			sourceTree = "<group>";
+		};
+		B9CA5068230F3D09007E31D8 /* SavedDataControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B9CA506C230F3D83007E31D8 /* SavedDataViewController.swift */,
+				B9BB539723575A17006DBDF9 /* DisplayDataViewController.swift */,
+			);
+			path = SavedDataControllers;
+			sourceTree = "<group>";
+		};
+		B9CA5069230F3D1D007E31D8 /* ButtonsControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B9CA506E230F3E20007E31D8 /* ButtonsViewController.swift */,
+			);
+			path = ButtonsControllers;
+			sourceTree = "<group>";
+		};
+		B9D97D1E2300AED400882E66 /* PeripheralModules */ = {
+			isa = PBXGroup;
+			children = (
+				B9CA505D230C953B007E31D8 /* PeripheralList.swift */,
+				B9CA505C230C953B007E31D8 /* RssiUI.swift */,
+			);
+			path = PeripheralModules;
+			sourceTree = "<group>";
+		};
+		B9FDD9202547951D0034E81B /* MonitorController */ = {
+			isa = PBXGroup;
+			children = (
+				B9FDD923254796870034E81B /* MonitorBaseViewController.swift */,
+				B9FDD921254795410034E81B /* MonitorViewController.swift */,
+			);
+			path = MonitorController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B97BC48E22FB3EEE00858CA9 /* PipelineBLE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B97BC4A122FB3EFF00858CA9 /* Build configuration list for PBXNativeTarget "PipelineBLE" */;
+			buildPhases = (
+				DD8BA0D1B5AFE4C077B13B42 /* [CP] Check Pods Manifest.lock */,
+				B97BC48B22FB3EEE00858CA9 /* Sources */,
+				B97BC48C22FB3EEE00858CA9 /* Frameworks */,
+				B97BC48D22FB3EEE00858CA9 /* Resources */,
+				5BF21C6CE5578010982397D8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PipelineBLE;
+			productName = PipelineBLE;
+			productReference = B97BC48F22FB3EEE00858CA9 /* PipelineBLE.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B97BC48722FB3EEE00858CA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Samuel Peterson";
+				TargetAttributes = {
+					B97BC48E22FB3EEE00858CA9 = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = B97BC48A22FB3EEE00858CA9 /* Build configuration list for PBXProject "PipelineBLE" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B97BC48622FB3EEE00858CA9;
+			productRefGroup = B97BC49022FB3EEE00858CA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B97BC48E22FB3EEE00858CA9 /* PipelineBLE */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B97BC48D22FB3EEE00858CA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B97BC49D22FB3EFF00858CA9 /* LaunchScreen.storyboard in Resources */,
+				B9CA5064230DC5D9007E31D8 /* Localizable.strings in Resources */,
+				B97BC49A22FB3EFF00858CA9 /* Assets.xcassets in Resources */,
+				B9CA5051230C7E10007E31D8 /* DefaultPreferences.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5BF21C6CE5578010982397D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PipelineBLE/Pods-PipelineBLE-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PipelineBLE/Pods-PipelineBLE-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PipelineBLE/Pods-PipelineBLE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD8BA0D1B5AFE4C077B13B42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PipelineBLE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B97BC48B22FB3EEE00858CA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B97BC4D922FB67AB00858CA9 /* LocalizationManager.swift in Sources */,
+				B99E3C2D2314B7AA00C03948 /* AvailableModulesTableViewCell.swift in Sources */,
+				B9CA5071230F4C71007E31D8 /* ConnectedDeviceViewController.swift in Sources */,
+				B97BC4CE22FB5EFF00858CA9 /* UartPeripheralModePacketManager.swift in Sources */,
+				B99E3C56232AA51D00C03948 /* CustomButton.swift in Sources */,
+				B9FDD924254796870034E81B /* MonitorBaseViewController.swift in Sources */,
+				B9677DA02367B2860015E6EA /* ExportData.swift in Sources */,
+				B97BC4AB22FB47C200858CA9 /* AvailableDevicesTableViewCell.swift in Sources */,
+				B9CA505E230C953B007E31D8 /* RssiUI.swift in Sources */,
+				B97BC4DD22FB686B00858CA9 /* CommandQueue.swift in Sources */,
+				B99E3C4E23201DCB00C03948 /* UartDataExport.swift in Sources */,
+				B9BB539C2358B0EE006DBDF9 /* SavedPeripheral+CoreDataProperties.swift in Sources */,
+				B97BC4C322FB5EE400858CA9 /* UartPacketManager.swift in Sources */,
+				B99E3C41231FFEFA00C03948 /* NSObject+ENHThrottledReloading.m in Sources */,
+				B97BC4CD22FB5EFF00858CA9 /* GattServer.swift in Sources */,
+				B94CD1F0230735C80077F77E /* WatchSessionManager.swift in Sources */,
+				B9CA5044230C3725007E31D8 /* MSWeakTimer.m in Sources */,
+				B97BC49522FB3EEE00858CA9 /* SavedDevicesViewController.swift in Sources */,
+				B97BC4AE22FB4C7100858CA9 /* UARTViewController.swift in Sources */,
+				B90147222347DF240001E90C /* UARTData+CoreDataClass.swift in Sources */,
+				B97BC4F322FCA27900858CA9 /* PastDataViewController.swift in Sources */,
+				B99E3C58232AA53A00C03948 /* UARTButtons.swift in Sources */,
+				B9677DA4236914E20015E6EA /* PlotPagesView.swift in Sources */,
+				B97BC4C222FB5EE400858CA9 /* BlePeripheral+Uart.swift in Sources */,
+				B9014712234794D10001E90C /* PipelineBLE.xcdatamodeld in Sources */,
+				B97BC4EC22FB6B5D00858CA9 /* MqttManager.swift in Sources */,
+				B97BC49322FB3EEE00858CA9 /* AppDelegate.swift in Sources */,
+				B97BC4BF22FB5EE400858CA9 /* BlePeripheral+Battery.swift in Sources */,
+				B901471B2347DE5E0001E90C /* SavedData+CoreDataProperties.swift in Sources */,
+				B97BC4DB22FB683400858CA9 /* LogHelper.swift in Sources */,
+				B9CA5049230C7435007E31D8 /* ReleasesParser.swift in Sources */,
+				B924C5432385F2960013B0AB /* PeripheralInfoSelectorViewController.swift in Sources */,
+				B9014714234795BF0001E90C /* PersistenceService.swift in Sources */,
+				B94CD1F1230735C80077F77E /* HandoffManager.swift in Sources */,
+				B97BC4E222FB6AE400858CA9 /* AlertHelper.swift in Sources */,
+				B90147242347DF270001E90C /* UARTData+CoreDataProperties.swift in Sources */,
+				B97BC4ED22FB6B5D00858CA9 /* MqttSettings.swift in Sources */,
+				B99E3C4F23201DCB00C03948 /* UartSettings.swift in Sources */,
+				B90147202347DEC80001E90C /* PlotData+CoreDataProperties.swift in Sources */,
+				B97BC4F122FC90DE00858CA9 /* AvailableDevicesViewController.swift in Sources */,
+				B99E3C342319C2D000C03948 /* DataFormatter.swift in Sources */,
+				B9CA506D230F3D83007E31D8 /* SavedDataViewController.swift in Sources */,
+				B97BC4C022FB5EE400858CA9 /* BlePeripheral.swift in Sources */,
+				B97BC4BD22FB5EE400858CA9 /* UartDataManager.swift in Sources */,
+				B97BC4CF22FB5EFF00858CA9 /* DeviceInformationPeripheralService.swift in Sources */,
+				B99E3C322316C60B00C03948 /* UARTBaseViewController.swift in Sources */,
+				B94CD1EA23071C050077F77E /* Preferences.swift in Sources */,
+				B97BC4E822FB6AFE00858CA9 /* KeyboardPositionNotifier.swift in Sources */,
+				B97BC4E622FB6AF600858CA9 /* DataDownloader.swift in Sources */,
+				B9BB539823575A17006DBDF9 /* DisplayDataViewController.swift in Sources */,
+				B97BC4DF22FB6AC200858CA9 /* DataConversions.swift in Sources */,
+				B9BEF6E923399B6100906B4C /* PersistentData.swift in Sources */,
+				B9677DAA236CBCD60015E6EA /* DataStreamContainerViewController.swift in Sources */,
+				B97BC4EF22FC8FEF00858CA9 /* MainPageTabBarController.swift in Sources */,
+				B9FDD922254795410034E81B /* MonitorViewController.swift in Sources */,
+				B99E3C2B2314279700C03948 /* ConnectedDeviceTableViewCell.swift in Sources */,
+				B99E3C46232000A100C03948 /* Color+DarkerLighter.swift in Sources */,
+				B99E3C7E232AF7CB00C03948 /* UARTTextField.swift in Sources */,
+				B97BC4D122FB5F0900858CA9 /* UartPacketManagerBase.swift in Sources */,
+				B99E3C302314BB5300C03948 /* DeviceInfoViewController.swift in Sources */,
+				B9BB539B2358B0EE006DBDF9 /* SavedPeripheral+CoreDataClass.swift in Sources */,
+				B901471C2347DE5E0001E90C /* SavedData+CoreDataClass.swift in Sources */,
+				B99E3C442320007700C03948 /* CocoaCompatibility.swift in Sources */,
+				B9CA505F230C953B007E31D8 /* PeripheralList.swift in Sources */,
+				B97BC4C122FB5EE400858CA9 /* UartLogManager.swift in Sources */,
+				B9CA506F230F3E20007E31D8 /* ButtonsViewController.swift in Sources */,
+				B97BC4BE22FB5EE400858CA9 /* BleManager.swift in Sources */,
+				B9CA504B230C7436007E31D8 /* FirmwareUpdater.swift in Sources */,
+				B97BC4CC22FB5EFF00858CA9 /* PeripheralService.swift in Sources */,
+				B97BC4C422FB5EE400858CA9 /* BleUUIDNames.swift in Sources */,
+				B9CA504A230C7435007E31D8 /* DfuUpdateProcess.swift in Sources */,
+				B901471F2347DEC80001E90C /* PlotData+CoreDataClass.swift in Sources */,
+				B97BC4CB22FB5EFF00858CA9 /* UartPeripheralService.swift in Sources */,
+				B99E3C4D23201DCB00C03948 /* UartStyle.swift in Sources */,
+				B97BC4E422FB6AEC00858CA9 /* Data+ScanValue.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B97BC49B22FB3EFF00858CA9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B97BC49C22FB3EFF00858CA9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B9CA5062230DC5D9007E31D8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9CA5063230DC5D9007E31D8 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B97BC49F22FB3EFF00858CA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B97BC4A022FB3EFF00858CA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B97BC4A222FB3EFF00858CA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11510BAA3628386FECC3B2F8 /* Pods-PipelineBLE.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2QYT8VRUR;
+				INFOPLIST_FILE = PipelineBLE/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SamPeterson.PipelineBLE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Resources/PipelineBLE-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B97BC4A322FB3EFF00858CA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2FF2DC3A457339C6DFFB7F3 /* Pods-PipelineBLE.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2QYT8VRUR;
+				INFOPLIST_FILE = PipelineBLE/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SamPeterson.PipelineBLE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Resources/PipelineBLE-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B97BC48A22FB3EEE00858CA9 /* Build configuration list for PBXProject "PipelineBLE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B97BC49F22FB3EFF00858CA9 /* Debug */,
+				B97BC4A022FB3EFF00858CA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B97BC4A122FB3EFF00858CA9 /* Build configuration list for PBXNativeTarget "PipelineBLE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B97BC4A222FB3EFF00858CA9 /* Debug */,
+				B97BC4A322FB3EFF00858CA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B9014710234794D10001E90C /* PipelineBLE.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B9014711234794D10001E90C /* PipelineBLE.xcdatamodel */,
+			);
+			currentVersion = B9014711234794D10001E90C /* PipelineBLE.xcdatamodel */;
+			path = PipelineBLE.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B97BC48722FB3EEE00858CA9 /* Project object */;
+}
