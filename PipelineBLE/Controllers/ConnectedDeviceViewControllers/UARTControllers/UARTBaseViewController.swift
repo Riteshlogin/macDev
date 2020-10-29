@@ -45,6 +45,8 @@ class UARTBaseViewController: UIViewController {
     fileprivate static var dataRxFont = UIFont(name: "CourierNewPSMT", size: 18)!
     fileprivate static var dataTxFont = UIFont(name: "CourierNewPS-BoldMT", size: 18)!
     
+
+    
     weak var blePeripheral: BlePeripheral?
     internal var uartData: UartPacketManagerBase!
     fileprivate let timestampDateFormatter = DateFormatter()

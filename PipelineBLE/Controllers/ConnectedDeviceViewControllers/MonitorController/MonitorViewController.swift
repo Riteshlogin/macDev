@@ -136,7 +136,7 @@ class MonitorViewController: MonitorBaseViewController {
         }
     }
     
-    //  Mark: - Style
+    //  MARK: - Style
     override func colorForPacket(packet: UartPacket) -> UIColor {
         var color: UIColor?
         if let peripheralId = packet.peripheralId {

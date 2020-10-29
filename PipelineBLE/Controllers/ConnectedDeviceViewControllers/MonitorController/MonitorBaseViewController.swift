@@ -13,7 +13,7 @@ import UIColor_Hex
 class MonitorBaseViewController: UIViewController {
     
     //  UI Components
-    private let pageTitle = "UART"
+    private let pageTitle = "Monitor"
     var comTextView: UITextView = {
         let textView = UITextView()
         textView.returnKeyType = .done
@@ -52,6 +52,8 @@ class MonitorBaseViewController: UIViewController {
     fileprivate let timestampDateFormatter = DateFormatter()
     fileprivate var tableCachedDataBuffer: [UartPacket]?
     fileprivate var textCachedBuffer = NSMutableAttributedString()
+    
+    fileprivate var noDisplay = 0
     
     private let keyboardPositionNotifier = KeyboardPositionNotifier()
 
@@ -178,7 +180,7 @@ extension MonitorBaseViewController {
         startCommandButton = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(onClickStart(_:)))
         
         //  Configure the Navigation control bar buttons
-        navigationItem.rightBarButtonItems = [exportButton, saveBarButton]
+        navigationItem.rightBarButtonItems = [exportButton, saveBarButton, startCommandButton]
 
         //  Add subviews to the main view
         view.addSubview(comTextView)
@@ -312,39 +314,37 @@ extension MonitorBaseViewController {
     
     @objc func onClickStart(_ send: UIBarButtonItem){
         //  Send a given command to the device
-        let alert = UIAlertController(title: "Start Data Stream", message: "Please enter the necessary information to start the data stream: ", preferredStyle: .alert)
-        alert.addTextField{ (textfield) in
-            textfield.placeholder = "Sampling Frequency MHz (1, 2, 4, 8)"
-        }
-        alert.addTextField{ (textfield) in
-            textfield.placeholder = "Number of runs"
-        }
-        alert.addTextField{ (textfield) in
-            textfield.placeholder = "Number of samples (default 500)"
-        }
+        let alert = UIAlertController(title: "Start Monitoring", message: "Please enter the necessary information to start the process: ", preferredStyle: .alert)
+        
+        alert.addTextField(configurationHandler: {(textField : UITextField!) -> Void in
+                textField.placeholder = "Monitoring period (in minutes)"
+        })
+        
+        alert.addTextField(configurationHandler: {(textField : UITextField!) -> Void in
+                textField.placeholder = "Amount of time to run (in hours)"
+        })
+        
+        alert.addTextField(configurationHandler: {(textField : UITextField!) -> Void in
+                textField.placeholder = "Number of samples per period"
+        })
         
         //  Add the action to the alert and present to user
         let action = UIAlertAction(title: "Start", style: .default){ (_) in
-            let runsText = alert.textFields?.first!.text ?? ""
-            let lengthText = alert.textFields?.last!.text ?? "500" //500 by default
-            let frequencyText = alert.textFields?.last!.text ?? ""
+            let gapText = alert.textFields?.first!.text ?? "15"
+            let timeText = alert.textFields?.last!.text ?? "1" //1 by default
+            let frequencyText = alert.textFields?.last!.text ?? "3"
             
             //  Try to get values as an int
-            guard let frequency = Int(frequencyText) else {
+            guard let frequency = Int(gapText) else {
                 self.invalidInput(message: "Invalid value entered for the frequency. Please try again.")
                 return
             }
             
-            if frequency != 1 || frequency != 2 || frequency != 4 || frequency != 8 {
-                self.invalidInput(message: "Frequency must be 1MHz, 2MHz, 4MHz, or 8MHz. Please try again.")
-                return
-            }
-            
-            guard let runs = Int(runsText) else {
+            guard let runs = Int(frequencyText) else {
                 self.invalidInput(message: "Invalid value entered for the number of runs. Please try again.")
                 return
             }
-            guard let samples = Int(lengthText) else {
+            guard let time = Int(timeText) else {
                 self.invalidInput(message: "Invalid value entered for the number of samples. Please try again.")
                 return
             }
@@ -352,11 +352,14 @@ extension MonitorBaseViewController {
             //  Alert the devices that are connected
             for peripheral in BleManager.shared.connectedPeripherals(){
                 // Will send frequency, samples, then run count
-                self.send(message: "s"+String(frequency)+"\n")
+                self.send(message: "g"+String(frequency)+"\n")
+                self.noDisplay += 1
                 usleep(500000)
-                self.send(message: "t"+String(samples)+"\n")
+                self.send(message: "c"+String(time)+"\n")
+                self.noDisplay += 1
                 usleep(500000)
                 self.send(message: "r"+String(runs)+"\n")
+                self.noDisplay += 1
                 
                 //  Now let's change the button that is present on the top right
                 self.barButtons(running: true)
@@ -371,6 +374,8 @@ extension MonitorBaseViewController {
         
         //  Present to user
         self.present(alert,animated: true, completion: nil)
+        uartData.clearPacketsCache()
+        reloadDataUI()
         
     }
 
@@ -428,6 +433,11 @@ extension MonitorBaseViewController: UartPacketManagerDelegate{
     fileprivate func onUartPacketText(_ packet: UartPacket) {
         guard Preferences.uartIsEchoEnabled || packet.mode == .rx else { return }
         
+        if(self.noDisplay > 0){
+            self.noDisplay -= 1
+            return
+        }
+        
         var color = colorForPacket(packet: packet)
         let font = fontForPacket(packet: packet)
         
@@ -442,6 +452,22 @@ extension MonitorBaseViewController: UartPacketManagerDelegate{
         }
 
         if let attributedString = attributedStringFromData(packet.data, useHexMode: Preferences.uartIsInHexMode, color: color, font: font) {
+            
+            let dateString = "date"
+            
+            // Some custom stuff to get the iPad to print out the current time instead of having me do it
+            if dateString == attributedString.string {
+                let now = Date()
+                let formatter = DateFormatter()
+                formatter.timeZone = TimeZone.current
+                formatter.dateFormat = "yyyy-MM-dd HH:mm"
+                let dateString = formatter.string(from: now)
+                let textAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: color]
+                let dateAttrString = NSAttributedString(string: dateString, attributes: textAttributes)
+                textCachedBuffer.append(dateAttrString)
+                return
+            }
+            
             textCachedBuffer.append(attributedString)
         }
     }

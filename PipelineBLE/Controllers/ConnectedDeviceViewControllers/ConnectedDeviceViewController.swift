@@ -294,6 +294,15 @@ extension ConnectedDeviceViewController: UITableViewDelegate{
                 monitorViewController.hidesBottomBarWhenPushed = true
                 navigationController?.pushViewController(monitorViewController, animated: true)
                 
+                //  Send data depending on multi peripherals
+                if multiplePeripherals{
+                    self.storyboard?.instantiateViewController(withIdentifier: "MonitorViewController")
+                }
+                else{
+                    let peripheral = BleManager.shared.connectedPeripherals().first
+                    monitorViewController.blePeripheral = peripheral
+                }
+                
             case .buttons:
                 //  Need to open the buttons view controller
                 let buttonsViewController = ButtonsViewController()
